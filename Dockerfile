@@ -6,4 +6,5 @@ RUN apt-get update && apt-get install -y \
   git
 COPY Project.toml .
 RUN julia --project=. -e "using Pkg; Pkg.instantiate()"
+COPY startup.jl /root/.julia/config/startup.jl
 CMD ["julia", "--project=."]
