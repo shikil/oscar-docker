@@ -4,6 +4,6 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
   build-essential \
   git
-COPY *.toml .
+COPY Project.toml .
 RUN julia --project=. -e "using Pkg; Pkg.instantiate()"
 CMD ["julia", "--project=."]
